@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Salsa&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Salsa&display=swap"
+        rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container::before {
+            content: "";
+            background: url(bg.jpg) no-repeat center center/cover;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgb(215, 26, 127);
+            box-shadow: 2px 2px 4px rgb(228, 176, 176);
+            border-radius: 50px;
+            animation: image-animation 8s forwards -0.8s;
+            transition: all 1s;
+        }
+
+        .image:hover {
+            transform: rotate(360deg);
+        }
+
+        @keyframes image-animation {
+            from {
+                width: 80px;
+                height: 80px;
+            }
+
+            to {
+                width: 120px;
+                height: 120px;
+            }
+
+        }
+
+        .text {
+            font-size: 30px;
+            font-family: Salsa;
+            animation-name: text-animation;
+            animation-duration: 8s;
+            animation-direction: normal;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-delay: -0.8s;
+        }
+
+        @keyframes text-animation {
+            from {
+                width: 20%;
+                color: white;
+            }
+
+            to {
+                width: 100%;
+                color: rgb(215, 26, 127);
+                text-shadow: 4px 4px 2px rgb(228, 176, 176);
+                font-weight: bold;
+            }
+        }
+        @media only screen and (max-width:1010px){
+            .image, .text{
+                position: relative;
+                top: 132px;
+                left: 20px;
+            }
+            .card-container1, .card-container2{
+                transform: scale(0.6);
+            }
+            .content{
+                display: inline-block;
+                height: 500px;
+                width: 670px;
+            }
+        }
+        a {
+            font-size: 20px;
+            font-family: Salsa;
+            text-decoration: none;
+            color: white;
+            margin: 6px;
+            padding: 2px;
+        }
+
+        a:hover {
+            color: pink;
+        }
+
+        .NavBar {
+            margin: 12px;
+            padding: 5px;
+            border: 4px solid rgb(215, 26, 127);
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(245, 137, 186);
+            width: 370px;
+            height: 50px;
+            border-radius: 24px;
+        }
+
+        .NavBar:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+
+            width: 280px;
+            height: 350px;
+            margin: 40px;
+            padding: 10px;
+            position: relative;
+            transition: transform 1500ms;
+            transform-style: preserve-3d
+        }
+        .card-container1:hover > .card , .card-container2:hover > .card {
+            cursor: pointer;
+            transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+            border: 8px solid rgb(215, 26, 127);
+            width: 280px;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        #front1 {
+            background: url(card1.gif) no-repeat center/cover;
+        }
+
+        #front2 {
+            background: url(card2.gif) no-repeat center/cover;
+        }
+
+        .back {
+            background-color: rgb(241, 200, 226);
+            
+            font-family: 'Dancing Script';
+            font-size: 28px;
+            color: rgb(135, 10, 85);
+            transform: rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tenor-gif-embed" data-postid="12895972045321820639" data-share-method="host" data-aspect-ratio="1"
+            data-width="100%">
+            <img class="image" src="logo.webp" alt="video">
+        </div>
+        <div class="text">
+            Step into the Ketty's Coding World!!
+        </div>
+    </div>
+    <div class="navigation">
+        <nav class="NavBar">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Services</a>
+            <a href="">Contact Us</a>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="card-container1">
+            <div class="card">
+                <div class="front" id="front1"></div>
+                <div class="back">
+                    <h2>Establish a route for joyful coding!</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-container2">
+            <div class="card">
+                <div class="front" id="front2"></div>
+                <div class="back">
+                    <h2>Register for exciting surprises!</h2></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
